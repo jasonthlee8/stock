@@ -10,7 +10,7 @@ Enter a stock ticker to instantly view technical indicator charts and a simple s
 
 🔗 **Live apps**
 - 繁體中文版: https://hkstock.streamlit.app/
-- English version: https://astock.streamlit.app/
+- English version: https://hkstock-e.streamlit.app/
 
 ### Features
 - Price with MA20 / MA50 / MA200 and Bollinger Bands
