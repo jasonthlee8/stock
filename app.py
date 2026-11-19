@@ -194,7 +194,11 @@ def show_summary(df, symbol):
 
 
 # ---------------------------------------------------------------- 介面
-st.title("📈 股票技術分析工具")
+ENGLISH_URL = "https://hkstock-e.streamlit.app/"
+
+title_col, link_col = st.columns([5, 1], vertical_alignment="center")
+title_col.title("📈 股票技術分析工具")
+link_col.link_button("English Version", ENGLISH_URL, use_container_width=True)
 st.caption("輸入例子：AAPL、AAPL.US、MSFT、0700.HK、700.HK、0005.HK（資料來源：Yahoo Finance）")
 
 if "ticker" not in st.session_state:
