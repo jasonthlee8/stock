@@ -196,9 +196,19 @@ def show_summary(df, symbol):
 # ---------------------------------------------------------------- 介面
 ENGLISH_URL = "https://hkstock-e.streamlit.app/"
 
-title_col, link_col = st.columns([5, 1], vertical_alignment="center")
-title_col.title("📈 股票技術分析工具")
-link_col.link_button("English Version", ENGLISH_URL, use_container_width=True)
+st.markdown(
+    f"""
+    <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+        <span style="font-size:2.5rem; font-weight:700; line-height:1.3;">📈 股票技術分析工具</span>
+        <a href="{ENGLISH_URL}" target="_blank" rel="noopener noreferrer"
+           style="padding:0.35rem 0.9rem; border:1px solid rgba(128,128,128,0.6); border-radius:0.5rem;
+                  color:inherit; text-decoration:none; font-weight:600; white-space:nowrap;">
+            English Version
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 st.caption("輸入例子：AAPL、AAPL.US、MSFT、0700.HK、700.HK、0005.HK（資料來源：Yahoo Finance）")
 
 if "ticker" not in st.session_state:

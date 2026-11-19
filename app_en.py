@@ -198,9 +198,19 @@ def show_summary(df, symbol):
 # ---------------------------------------------------------------- UI
 CHINESE_URL = "https://hkstock.streamlit.app/"
 
-title_col, link_col = st.columns([5, 1], vertical_alignment="center")
-title_col.title("📈 Stock Technical Analysis Tool")
-link_col.link_button("中文版", CHINESE_URL, use_container_width=True)
+st.markdown(
+    f"""
+    <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+        <span style="font-size:2.5rem; font-weight:700; line-height:1.3;">📈 Stock Technical Analysis Tool</span>
+        <a href="{CHINESE_URL}" target="_blank" rel="noopener noreferrer"
+           style="padding:0.35rem 0.9rem; border:1px solid rgba(128,128,128,0.6); border-radius:0.5rem;
+                  color:inherit; text-decoration:none; font-weight:600; white-space:nowrap;">
+            中文版
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 st.caption("Examples: AAPL, AAPL.US, MSFT, 0700.HK, 700.HK, 0005.HK (data source: Yahoo Finance)")
 
 if "ticker" not in st.session_state:
