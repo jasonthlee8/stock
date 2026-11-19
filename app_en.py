@@ -196,7 +196,11 @@ def show_summary(df, symbol):
 
 
 # ---------------------------------------------------------------- UI
-st.title("📈 Stock Technical Analysis Tool")
+CHINESE_URL = "https://hkstock.streamlit.app/"
+
+title_col, link_col = st.columns([5, 1], vertical_alignment="center")
+title_col.title("📈 Stock Technical Analysis Tool")
+link_col.link_button("中文版", CHINESE_URL, use_container_width=True)
 st.caption("Examples: AAPL, AAPL.US, MSFT, 0700.HK, 700.HK, 0005.HK (data source: Yahoo Finance)")
 
 if "ticker" not in st.session_state:
